@@ -8,7 +8,7 @@ public class CreatingContact {
     private String phoneNumber;
     private CreatingContact addressObj;
 
-    public String getFirstName(String next) {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -52,7 +52,8 @@ public class CreatingContact {
         return zipCode;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(int zipCode)
+            {
         this.zipCode = zipCode;
     }
 

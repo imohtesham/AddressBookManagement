@@ -13,7 +13,7 @@ public class AddressBook {
         CreatingContact person = new CreatingContact();
 
         System.out.println("Enter person first  name: ");
-        person.getFirstName(scanner.next());
+        person.getFirstName();
         System.out.println("Enter person last name: ");
         person.setLastName(scanner.next());
         System.out.println("Enter mobile number: ");
@@ -47,7 +47,7 @@ public class AddressBook {
             boolean isFoundPerson = false;
 
             for (int i = 0; i < persons.size(); i++) {
-                if (persons.get(i).getFirstName(searchName).equals(searchName)) {
+                if (persons.get(i).getFirstName().equals(searchName)) {
                     isFoundPerson = true;
                     indexOfPerson = i;
                     break;
@@ -63,7 +63,7 @@ public class AddressBook {
                 persons.get(indexOfPerson).getAddressObj().setZipCode(scanner.nextInt());
                 System.out.println("Enter mobile number: ");
                 persons.get(indexOfPerson).setPhoneNumber(scanner.next());
-                persons.get(indexOfPerson).getFirstName(searchName);
+                persons.get(indexOfPerson).getFirstName();
                 System.out.println("Enter Last Name: ");
                 persons.get(indexOfPerson).setLastName(scanner.next());
                 System.out.println();
@@ -75,6 +75,31 @@ public class AddressBook {
             System.out.println("No record Present to edit this contact");
 
     }
+    public static void deletePerson() {
+        if (counter > 0) {
+            System.out.println("Enter Persons FirstName you want to delete: ");
+            String searchName = scanner.next();
+            indexOfPerson = 0;
+            boolean isFoundPerson = false;
+
+            for (int i = 0; i < persons.size(); i++) {
+                if (persons.get(i).getFirstName().equals(searchName)) {
+                    isFoundPerson = true;
+                    indexOfPerson = i;
+                    break;
+                }
+            }
+            if (isFoundPerson) {
+                persons.remove(indexOfPerson);
+                counter--;
+                System.out.println();
+                System.out.println("Delete completed");
+            } else
+                System.out.println("No person found with this number");
+        } else
+            System.out.println("No records to delete");
+    }
+
 
     static void menu() {
         int choice;
@@ -90,12 +115,15 @@ public class AddressBook {
                     editContactPerson();
                     break;
                 case 3:
+                    deletePerson();
+                    break;
+                case 4:
                     System.out.println(persons);
                     break;
                 default:
-                    System.out.println("Please Enter number between 1 to 3");
+                    System.out.println("Enter number from 1 to 4");
             }
-        } while (choice < 4);
+        } while (choice < 5);
     }
 
     public static void main(String[] args) {

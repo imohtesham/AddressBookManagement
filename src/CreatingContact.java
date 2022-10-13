@@ -3,7 +3,6 @@ public class CreatingContact {
     //Book with first and last names, address,
     //city, state, zip, phone number and
     //email...
-
         String firstName;
         String lastName;
         String address;

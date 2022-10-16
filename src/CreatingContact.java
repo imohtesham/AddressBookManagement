@@ -1,14 +1,7 @@
 public class CreatingContact {
-    private String firstName;
-    private String lastName;
-    private String address;
-    private String city;
-    private String state;
-    private int zipCode;
-    private String phoneNumber;
-    private CreatingContact addressObj;
-
-    public String getFirstName(String next) {
+    String firstName, lastName, address, city, state, emailId;
+    int zipCode, phoneNumber;
+    public String getFirstName() {
         return firstName;
     }
 
@@ -48,6 +41,14 @@ public class CreatingContact {
         this.state = state;
     }
 
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
     public int getZipCode() {
         return zipCode;
     }
@@ -56,25 +57,31 @@ public class CreatingContact {
         this.zipCode = zipCode;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    public CreatingContact getAddressObj() {
-        return addressObj;
-    }
-
-    public void setAddressObj(CreatingContact addressObj) {
-        this.addressObj = addressObj;
+    public CreatingContact(String firstName, String lastName, String address, String city, String state, String emailId, int zipCode, int phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.emailId = emailId;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
-    public String toString() {
-        return "\npersonInfo [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city="
-                + city + ", state=" + state + ", zipcode=" + zipCode + ", phoneNumber=" + phoneNumber + "]\n";
+    public String toString () {
+        return
+                "FirstName  =  " + firstName +"\nLastName   =  " + lastName +"\nAddress    =  " + address +"\nCity       =  " + city +"\nState     " +
+                        " =  " + state +"\nZipCode    =  " + zipCode +
+                        "\nNumber     =  " + phoneNumber +"\nEmail      =  " + emailId ;
+
     }
 
 }

@@ -116,6 +116,10 @@ public class AddressBook {
         }
     }
 
+    public void sortCity() {
+        Collections.sort(list, Sort.compareCity);
+    }
+
     @Override
     public String toString() {
         return "AddressBook{" +
